@@ -4,9 +4,6 @@ from pysodium import crypto_scalarmult_ristretto255_base, crypto_scalarmult_rist
 from hashlib import sha512
 from src.pyvrf_r255 import ECVRF
 
-SK = '3431c2b03533e280b23232e280b34e2c3132c2b03238e280b23131e280b34500'
-alpha = '633273702e6f72672f7672662d72323535'
-PK = crypto_scalarmult_ristretto255_base(bytes.fromhex(SK))
 
 suite_string = b'\xFF' + b'c2sp.org/vrf-r255'
 cLen = 16
