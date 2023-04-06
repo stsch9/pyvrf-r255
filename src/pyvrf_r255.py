@@ -21,7 +21,7 @@ class ECVRF:
             raise Exception("Invalid key")
 
     @classmethod
-    def with_ramdom_key(cls):
+    def random_key(cls):
         x = crypto_core_ristretto255_scalar_random()
         return cls(x)
 
