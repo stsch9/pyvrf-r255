@@ -149,4 +149,5 @@ pi, beta = vrf.hash(bytes.fromhex(alpha))
 print('pi: ' + pi.hex())
 print('beta: ' + beta.hex())
 
-print(vrf.verify(pk, bytes.fromhex(alpha), pi, beta).hex())
+print(vrf.verify(pk, bytes.fromhex(alpha), pi).hex())
+print(vrf.random_key().secret_key)
