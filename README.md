@@ -5,7 +5,7 @@ It uses [pysodium](https://github.com/stef/pysodium) for all Ristretto255 functi
 https://github.com/jedisct1/libsodium
 ## Usage:
 ```
-# Use or own private Key
+# Use your own private Key
 vrf = ECVRF(bytes.fromhex('3431c2b03533e280b23232e280b34e2c3132c2b03238e280b23131e280b34500'))
 
 # or create a random private Key
