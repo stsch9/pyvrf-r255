@@ -9,11 +9,12 @@ With prior knowledge of the public key and alpha, someone can use pi to prove th
 
 This is true because the following assertion holds:
 
-For alpha and beta there exists only one keypair (sk, pk) and one proof pi such that
+For fixed alpha and beta it is infeasible to find two different keypairs (sk, pk), (sk_2, pk_2) and to two proofs pi and pi_2 such that
     VRF_verify(pk, alpha, pi) = ("VALID", beta)
+    VRF_verify(pk_2, alpha, pi_2) = ("VALID", beta)
 
 Proof:
-Assume that there exists a second keypair (sk_2, pk_2) != (sk, pk) and a proof pi_2 such that 
+Assume that we have found a second keypair (sk_2, pk_2) != (sk, pk) and a proof pi_2 such that 
     VRF_verify(pk_2, alpha, pi_2) = ("VALID", beta)
 Let 
     pi_3, beta_3 = VRF_hash(sk_2, alpha)
