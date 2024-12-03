@@ -9,7 +9,7 @@ suite_string = b'\xFF' + b'c2sp.org/vrf-r255'
 cLen = 16
 ptLen = 32
 q = pow(2, 252) + 27742317777372353535851937790883648493
-base = 'e2f2ae0a6abc4e71a884a961c500515f58e30b6aa582dd8db6a65945e08d2d76'
+identity = '0000000000000000000000000000000000000000000000000000000000000000'
 
 
 class ECVRF:
@@ -73,7 +73,7 @@ class ECVRF:
         else:
             raise Exception("Invalid point")
 
-        if validate_key and Y == bytes.fromhex(base):
+        if validate_key and Y == bytes.fromhex(identity):
             raise Exception("Invalid point")
 
         encode_to_curve_salt = PK_string
