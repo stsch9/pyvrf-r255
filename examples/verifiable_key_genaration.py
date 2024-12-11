@@ -7,13 +7,13 @@ from cryptography.hazmat.primitives.kdf.hkdf import HKDFExpand
 In this example, an X25519 keypair is generated with the VRF output. 
 With prior knowledge of the public key and alpha, someone can use pi to prove that he generated the keypair.
 
-Signatures do not work because they can simply be replaced by a siganture of another user. 
+Signatures do not work because they can simply be replaced by a signature of another user. 
 Creating keys from the output of hash functions and using the hash input as proof does not work either,
 because this proof can only be provided once and then any other person who knows the input can provide the proof.
 
 This is true because the following assertion holds:
 
-For fixed alpha and beta it is infeasible to find two different keypairs (sk, pk), (sk_2, pk_2) and to two proofs pi and pi_2 such that
+For fixed alpha and beta it is infeasible to find two different keypairs (sk, pk), (sk_2, pk_2) and two proofs pi and pi_2 such that
     VRF_verify(pk, alpha, pi) = ("VALID", beta)
     VRF_verify(pk_2, alpha, pi_2) = ("VALID", beta)
 

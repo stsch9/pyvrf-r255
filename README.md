@@ -1,8 +1,8 @@
 # pyvrf-r255
+**WARNING:** This is just a PoC. Use at your own risk. <br />
 This is a simple python implementation of <br />
 [c2sp.org/vrf-r255](https://github.com/C2SP/C2SP/blob/main/vrf-r255.md). <br /> <br />
-It uses [pysodium](https://github.com/stef/pysodium) for all Ristretto255 functions. Therefore it requires a pre-installed libsodium from: <br />
-https://github.com/jedisct1/libsodium
+It uses [pysodium](https://github.com/stef/pysodium) for all Ristretto255 functions. Therefore [libsodium](https://github.com/jedisct1/libsodium) must be pre-installed.
 ## Usage:
 ```
 # Use your own private Key
