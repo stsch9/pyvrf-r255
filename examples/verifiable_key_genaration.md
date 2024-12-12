@@ -4,7 +4,7 @@
 **Warning:** Nobody has reviewed this example and the assertions.
 
 Sometimes it is necessary to be able to prove to someone who generated a key pair.
-You can use the VRF output to generate a key pair. With prior knowledge of the public key `pk` and `alpha`, someone can use `pi` to prove that he generated the keypair.
+You can use your secret key `sk` and the VRF output to generate a key pair. With prior knowledge of the public key `pk` and `alpha`, someone can use `pi` to prove that he generated the keypair.
 
 Signatures do not work because they can simply be replaced by a signature of another user. 
 Creating keys from the output of hash functions and using the hash input as proof does not work either,
@@ -41,3 +41,13 @@ beta != beta_3
  
 This is a contradiction to the full-uniqueness property, see https://www.rfc-editor.org/rfc/rfc9381.html#name-full-uniqueness
 
+## Code
+```
+def generate_key_pair(sk, info=b"derive key pair"):
+    alpha = randombytes(32)
+    pi, beta = VRF_hash(SK, alpha)
+    seed = HKDF-Expand(beta, info) # possibly not necessary
+    PK, SK = derive_deterministic_keypair_from_seed(seed)
+
+    return PK, SK, alpha, pi
+```
