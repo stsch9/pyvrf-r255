@@ -20,7 +20,7 @@ VRF_verify(pk_2, alpha, pi_2) = ("VALID", beta)
 ```
 
 **Proof**:
-Assume that we have found a second keypair `(sk_2, pk_2) != (sk, pk)` and a proof `pi_2 such that 
+Assume that we have found a second keypair `(sk_2, pk_2) != (sk, pk)` and a proof `pi_2` such that 
 ```
 VRF_verify(pk_2, alpha, pi_2) = ("VALID", beta)
 ```
