@@ -51,7 +51,7 @@ def generate_key_pair(sk, info=b"derive key pair"):
 
     return PK, SK, alpha, pi
 
-def verify_key_pair(SK, pk,  alpha, pi, info=b"derive key pair"):
+def verify_key_pair(SK, pk, alpha, pi, info=b"derive key pair"):
     beta = ECVRF.verify(pk, alpha, pi)
     seed = HKDF-Expand(beta, info)
     PK_1, SK_1 = derive_deterministic_keypair_from_seed(seed)
