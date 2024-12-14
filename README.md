@@ -21,5 +21,5 @@ pk = vrf.public_key
 pi, beta = vrf.hash(b'bla')
 
 # Verify
-print(vrf.verify(pk, b'bla', pi, beta))
+print(vrf.verify(pk, b'bla', pi))
 ```
